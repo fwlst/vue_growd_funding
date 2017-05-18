@@ -1,0 +1,524 @@
+/*样式*/
+.clearFix:after {
+    clear: both;
+    content: '.';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden
+}
+
+img {
+    display: block
+}
+
+body, html {
+    background: #f9f9f9;
+    height: 100%
+}
+.goods .goods_top, .index .info_list {
+    box-shadow: 0 5px 0 #f3f3f3;
+    z-index: 10
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0)
+    }
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.rotate {
+    -webkit-animation: rotate 10s linear infinite;
+    animation: rotate 10s linear infinite;
+    -webkit-transform-origin: center center;
+    transform-origin: center center
+}
+
+/*
+.index .info_list {
+    position: relative;
+    margin: -10% 15px 35px;
+    padding: 24px 0;
+    border-radius: 15px;
+    background: #fff
+}
+
+.index .info_list .list_item {
+    width: 21%;
+    float: left;
+    text-align: center;
+    margin: 5px 2%
+}
+
+.index .info_list .list_item .top {
+    font-size: 14px
+}
+
+.index .info_list .list_item .bottom {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-radius: 100%;
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.index .info_list .list_item .bottom .spot_box {
+    width: calc(100% + 6px);
+    position: absolute;
+    left: -1.5px;
+    top: 50%;
+    margin-top: -3px
+}
+
+.index .info_list .list_item .bottom .spot_box .spot {
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%
+}
+
+.index .info_list .list_item:nth-child(1) .bottom {
+    background: rgba(255, 99, 103, .8)
+}
+
+.index .info_list .list_item:nth-child(2) .bottom {
+    background: rgba(249, 159, 96, .8)
+}
+
+.index .info_list .list_item:nth-child(3) .bottom {
+    background: rgba(56, 186, 126, .8)
+}
+
+.index .info_list .list_item:nth-child(4) .bottom {
+    background: rgba(83, 72, 89, .8)
+}
+
+.index .info_list .list_item:nth-child(1) .bottom .spot {
+    background: #ff6367
+}
+
+.index .info_list .list_item:nth-child(2) .bottom .spot {
+    background: #f99f60
+}
+
+.index .info_list .list_item:nth-child(3) .bottom .spot {
+    background: #38ba7e
+}
+
+.index .info_list .list_item:nth-child(4) .bottom .spot {
+    background: #534859
+}
+
+.index .goToPage_btn {
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    text-align: center;
+    margin: 35px auto;
+    border-radius: 50px;
+    background: #ff6367;
+    color: #fff
+}
+.index .goToPage_btn.active {
+    background: #ddd;
+    color: #999
+}
+
+.index .rule {
+    padding: 0 15px;
+    color: #222
+}
+
+.index .rule .top {
+    width: 42.4%;
+    font-size: 16px;
+    margin: 0 auto 15px;
+    text-align: center;
+    position: relative
+}
+
+.index .rule .top .title_bg {
+    width: 100%
+}
+
+.index .rule .top .rule_title {
+    height: 22px;
+    line-height: 22px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -34px;
+    margin-top: -11px
+}
+
+.index .rule .bottom p {
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+
+.partake_list {
+    border: 1px solid #eee
+}
+
+.partake_list .list_item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee
+}
+
+.partake_list .list_item:last-child {
+    border-bottom: none
+}
+
+.partake_list .list_item .flow_package, .partake_list .list_item .phone {
+    width: 50%;
+    float: left
+}
+
+.partake .load_more {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center
+}
+
+.goods .goods_top {
+    position: relative;
+    margin: -10% 15px 22px;
+    padding: 15px 0;
+    border-radius: 15px;
+    background: #fff
+}
+
+.goods .goods_top .goods_title {
+    width: 42.4%;
+    font-size: 16px;
+    margin: 0 auto 15px;
+    text-align: center;
+    position: relative
+}
+
+.goods .goods_top .goods_title .title_bg {
+    width: 100%
+}
+
+.goods .goods_top .goods_title .rule_title {
+    height: 22px;
+    line-height: 22px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -34px;
+    margin-top: -11px
+}
+
+.goods .goods_top .goods_list {
+    padding: 0 1.5%;
+    text-align: center
+}
+
+.goods .goods_top .goods_list .list_item {
+    width: 26%;
+    padding: 2%;
+    margin: 1.3%;
+    float: left;
+    border: 1px solid #eee;
+    border-radius: 15px
+}
+.goods .goods_top .goods_list .list_item .good_img{
+    position: relative;
+}
+.goods .goods_top .goods_list .list_item .good_img .good_prizeName{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    margin-top: -15px;
+    color: #fff;
+}
+.goods .goods_top .goods_list .list_item.active {
+    border-color: #38ba7e
+}
+
+.goods .goods_top .goods_list .list_item .top {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #999;
+    line-height: 18px;
+}
+
+.goods .goods_top .goods_list .list_item .bottom .nowPrice, .goods .goods_top .goods_list .list_item .bottom .oldPrice {
+    width: 50%;
+    float: left
+}
+
+.goods .goods_top .goods_list .list_item .bottom .nowPrice {
+    height: 21px;
+    line-height: 21px;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.goods .goods_top .goods_list .list_item .bottom .oldPrice {
+    height: 21px;
+    line-height: 23px;
+    font-size: 10px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.goods .phone_title {
+    width: 42.4%;
+    font-size: 16px;
+    margin: 0 auto 15px;
+    text-align: center;
+    position: relative
+}
+
+.goods .phone_title .title_bg {
+    width: 100%
+}
+
+.goods .phone_title .rule_title {
+    height: 22px;
+    line-height: 22px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -34px;
+    margin-top: -11px
+}
+
+.goods .goods_form {
+    padding: 0 5%
+}
+
+.goods .goods_form .form_item {
+    height: 44px;
+    line-height: 44px;
+    margin-bottom: 19px
+}
+
+.goods .goods_form .form_item input {
+    height: 100%;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding-left: 4%;
+    outline: 0
+}
+
+.goods .goods_form .form_item .phone_input {
+    width: 95%;
+    display: block
+}
+
+.goods .goods_form .form_item .code_inout {
+    width: 48%;
+    display: block;
+    float: left
+}
+
+.goods .goods_form .form_item .send_code {
+    width: 30%;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #38ba7e;
+    background: #38ba7e;
+    border-radius: 5px;
+    height: 100%;
+    float: right;
+    padding: 0 15px
+}
+
+.goods .goods_form .form_item .send_code.active {
+    border: 1px solid #ddd;
+    background: #ddd;
+    color: #fff
+}
+
+.goods .goods_form .submit_order_btn {
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    text-align: center;
+    margin: 35px auto;
+    border-radius: 50px;
+    background: #ff6367;
+    color: #fff
+}
+*/
+.order .order_info {
+    height: 94px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    background: #fff
+}
+
+.order .order_info .left, .order .order_info .right {
+    padding: 10px 0;
+    float: left
+}
+
+.order .order_info .left {
+    padding-right: 15px;
+    width: 25%;
+    height: 74px;
+    border-right: 1px solid #F2F1F1
+}
+
+.order .order_info .left img {
+    margin: 0 auto;
+    height: 100%
+}
+
+.order .order_info .right {
+    width: 64%;
+    padding-left: 5%
+}
+
+.order .order_info .right .price {
+    font-size: 22px;
+    padding-bottom: 8px
+}
+
+.order .order_info .right .order_content_desc {
+    font-size: 16px;
+    margin-bottom: 3px
+}
+
+.order .order_info .right .order_nub {
+    width: 226px;
+    font-size: 12px;
+    color: #666
+}
+
+.order .pay_list {
+    background: #fff;
+    margin-bottom: 60px
+}
+
+.order .pay_list .pay_item {
+    background: #fff;
+    padding: 10px 0
+}
+
+.order .pay_list .pay_item .center, .order .pay_list .pay_item .left, .order .pay_list .pay_item .right {
+    float: left
+}
+
+.order .pay_list .pay_item .left {
+    width: 20%;
+    height: 50px
+}
+
+.order .pay_list .pay_item .left img {
+    margin: 0 auto;
+    height: 100%
+}
+
+.order .pay_list .pay_item .center {
+    width: 63%;
+    padding-left: 2%
+}
+
+.order .pay_list .pay_item .center .title {
+    font-size: 18px;
+    margin-bottom: 8px
+}
+
+.order .pay_list .pay_item .center .pic {
+    font-size: 12px
+}
+
+.order .pay_list .pay_item .right {
+    width: 15%;
+    height: 50px
+}
+
+.order .pay_list .pay_item .right .choice {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #eee;
+    border-radius: 100%;
+    text-align: center;
+    margin-top: 10px
+}
+
+.order .pay_list .pay_item .right .choice.active {
+    background: url(../../assets/img/hook.png) center no-repeat #38ba7e;
+    background-size: 100% 100%;
+    border: none
+}
+
+.order .confirm_pay_btn {
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    text-align: center;
+    margin: 35px auto;
+    border-radius: 50px;
+    background: #ff6367;
+    color: #fff
+}
+
+.order .confirm_pay_btn .price {
+    font-weight: 700
+}
+
+.pay_success .pay_state {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin: 70px auto 10px;
+    background: url(../../assets/img/hook.png) center no-repeat #38ba7e;
+    background-size: 100% 100%
+}
+
+.pay_success .pay_success_title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px
+}
+
+.pay_success .pay_success_tic {
+    text-align: center;
+    font-size: 14px;
+    color: #999
+}
+
+.pay_success .back_index {
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 22px;
+    text-align: center;
+    margin: 35px auto;
+    border-radius: 50px;
+    background: #ff6367;
+    color: #fff
+}

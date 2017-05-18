@@ -1,0 +1,17 @@
+/**
+ * Created by lstfw on 2017/4/24.
+ */
+import Vuex from 'vuex'
+import Vue from 'vue'
+
+import indexData from '@/store/modules/index'
+import goodsData from '@/store/modules/goods'
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+    modules:{
+        indexData,
+        goodsData
+    }
+});
