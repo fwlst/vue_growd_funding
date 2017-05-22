@@ -4,9 +4,6 @@
 import $http from 'axios'
 import _ from 'lodash'
 
-import API from '../axiosCofig';
-let api = API.api;
-
 const OK_code = 200;
 /*声明数据*/
 const state = {

@@ -24,7 +24,6 @@
 </template>
 
 <script>
-    import Vue from 'vue'
     export default {
         data () {
             return {
@@ -42,18 +41,17 @@
         },
         methods: {
             init(){
-                //this.getOpenId();
-                this.renderGoToPageBtn();
+                this.getOpenId();
             },
             //从地址获取openid 没有openid就去授权
             getOpenId: function () {
                 let search=window.location.search.substr(1);
-                let appId = 'wx91aafb5168f2d2fb';
+                let appId = 'wx5970f157ba6d8f82';
                 if(search.indexOf("json")==-1){
-                    let callback_url= 'https://wifi.pingan.com.cn/pawf-nop/rest/flowCrowdFunding/toHome';
+                    let callback_url= 'http://test1-pawfhd.pingan.com.cn:31080/pawf-nop/rest/flowCrowdFunding/toHome';
                     callback_url=encodeURIComponent(callback_url);
                     //appid=wx91aafb5168f2d2fb  生产
-                    //测试 appid=wx214c8d41f32aa634
+                    //测试 appid=wx5970f157ba6d8f82
                     let warrantUrl='https://open.weixin.qq.com/connect/oauth2/authorize?appid='+ appId +'&redirect_uri='
                         + callback_url+ '?activityId='+ this.postData.activityId +
                         '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
@@ -65,13 +63,18 @@
                 if(dataJson.code==200){
                     let openid = dataJson.data.openid;
                     let activityId = dataJson.data.activityId;
-                    if(openid == 'oI3BwxMJu0vt0WFHvaW5Ij7iWN8c'){
-                        //郑卓雄
+                    console.log(openid);
+                    if(openid == 'oI3BwxC2Lew02d5UATAKx60PLCVQ'){
+                        //范伟
                         openid = 'ol8HYt7QC1Uq4Od2HoqNEcUTu2Is';
                     }
                     this.$store.commit('updatePostPrizesData',{key:'openid', val:openid});
-                    //this.$store.commit('updatePostPrizesData',{key:'activityId', val:activityId});
                 }
+                this.$store.dispatch('fatchActivityData').then((res) => {
+                    this.renderGoToPageBtn();
+                },(err) => {
+                    this.$toast({message: err.msg, position: 'bottom', duration: 3000});
+                });
             },
             renderGoToPageBtn(){
                 let activityStatus = this.activityData.activityStatus;
@@ -100,10 +103,7 @@
                         console.log('订单详情');
                     }else {
                         this.$router.push({
-                            name: 'Goods'/*,
-                            params: {
-                                indexPostData: this.postData
-                            }*/
+                            name: 'Goods'
                         });
                     }
                 }else if(activityStatus == 2){
@@ -122,11 +122,7 @@
             }
         },
         created(){
-            this.$store.dispatch('fatchActivityData').then((res) => {
-                this.init();
-            },(err) => {
-                this.$toast({message: err.msg, position: 'bottom', duration: 3000});
-            });
+            this.init();
         },
         directives: {
             grid: {

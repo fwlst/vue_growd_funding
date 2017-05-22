@@ -2,8 +2,6 @@
  * Created by lstfw on 2017/4/24.
  */
 import $http from 'axios';
-import API from '../axiosCofig';
-let api = API.api;
     /*状态码*/
 const OK_code = 200;
 
@@ -12,7 +10,7 @@ const OK_code = 200;
 const state = {
     indexPostData: {
         activityId: '81b6e88c-17e2-478a-9a2d-0024fdbf3b19',
-        openid: 'ol8HYt7QC1Uq4Od2HoqNEcUTu2Is'
+        openid: ''
     },
     activityData: {}
 };
